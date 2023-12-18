@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "./pb";
+
+service MinDistanceService {
+    rpc GetMinDistance(MinDistanceRequest) returns (MinDistanceResponse) {}
+}
+
+message MinDistanceRequest {
+    repeated int32 nums = 1; 
+}
+  
+message MinDistanceResponse {
+    repeated MinPair pairs = 1;
+}
+  
+message MinPair {
+    int32 num1 = 1; 
+    int32 num2 = 2;
+}
